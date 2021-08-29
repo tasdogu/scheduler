@@ -15,7 +15,7 @@ struct process
 
 uint16_t create_process(uint16_t interval, void (*fn)())
 {
-	proc_ptr = realloc(proc_ptr, proc_num + 1);
+	proc_ptr = (struct process*) realloc(proc_ptr, proc_num + 1);
 	proc_ptr[proc_num].interval = interval;
 	proc_ptr[proc_num].fn = fn;
 	return proc_num++;
